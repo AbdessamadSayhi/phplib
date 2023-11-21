@@ -14,15 +14,26 @@ include_once('hello.php'); // Same as include() bit will make sure that the incl
 require('hello.php'); // if hello.php dosn't exsist will show a fatal error and stop the code.
 require_once('hello.php'); // Same concept.
 
-str_split("abdessamad");
-strtoupper("abdessamad");
-ord('A');
-count([1, 2, 3, 4, 5]);
-strlen("Abdessamad");
-$alphabets = ['a', 'b', 'c'];
-array_push($alphabets, "d", "e", "f");
-$alphabets = array_merge($alphabets, range('g', 'y'));
-$alphabets[] = 'z';
+str_split("abdessamad"); // return string as array
+
+strtoupper("abdessamad"); // convert string to uppercase letters
+
+ord('A'); //  return ASCII code of the given characters
+
+count([1, 2, 3, 4, 5]); // get length of array
+
+strlen("Abdessamad"); // get length of string
+
+$alphabets = ['a', 'b', 'c']; // declare and assing value to array
+
+array_push($alphabets, "d", "e", "f"); // pushing to the end of array
+
+range('a', 'z'); //return an array of key values of letters from a to z
+// make sure with print_r(gettype(range('a', 'z')));
+
+$alphabets = array_merge($alphabets, range('g', 'y')); // array_merge(string1,string2) concatinate 2 strings
+// range(1,10) return a range of integers starting point (included) to ending point (excluded)
+$alphabets[] = 'z'; // push to the ends of the array the letter 'z'
 
 // To iterate over the characters in 
 // the string variable $word = "Hello" 
@@ -46,7 +57,7 @@ function designerPdfViewer($h, $word)
     $chars = str_split($word);
     $alphabets = range('a', 'z');
     $heights = array();
-    foreach ($chars as $i => $v) {
+    foreach ($chars as $i => $v) { // we are using $i as key and $v as values of the array $chars
         $heights[] = $h[array_search($v, $alphabets)];
     }
     return max($heights) * count($heights);

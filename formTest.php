@@ -1,15 +1,3 @@
-<?php
-
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    echo $_POST['username'];
-    echo "</br>";
-    echo $_POST['password'];
-    echo "</br>";
-    echo $_POST['gender'];
-    echo "</br>";
-}
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,3 +20,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 </body>
 
 </html>
+<?php
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    echo $_POST['username'];
+    echo "</br>";
+    echo $_POST['password'];
+    echo "</br>";
+    echo $_POST['gender'];
+    echo "</br>";
+}
+?>
