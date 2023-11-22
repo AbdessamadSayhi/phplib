@@ -99,3 +99,18 @@ $doubledNumbers = array_map(function ($x) { // using anonymous function
 }, $numbers);
 
 print_r($doubledNumbers); // will print each element of array $numbers multiplyed by 2.
+
+$associativeArray = [
+    'key1' => 'value1',
+    'key2' => null,
+    'key3' => 'value3',
+    'key4' => null,
+];
+
+$numberOfNonNullElements = 0;
+
+foreach ($associativeArray as $key => $value) {
+    if ($key !== null && $value !== null) {
+        $numberOfNonNullElements++;
+    }
+}

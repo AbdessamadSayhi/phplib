@@ -31,3 +31,21 @@ echo "<br>";
 $translation = ["@" => "l", "#" => "o"];
 
 echo strtr("E@zer# Web Sch##@", $translation);
+
+str_replace("@", "o", "Abd@ou");
+
+echo "*********************<br>";
+/*
+String Functions
+- substr_replace(String[Required], Replace With Or Insert[Required], Start[Required], Length[$])
+--- $ Positive Number => Length Of String To Be Replaced
+--- $ Negative Number => Characters Left At The End After Replacement
+--- $ 0               => Insert Instead Of Replace
+*/
+substr_replace("OneTwo", 1, 0); // 1
+substr_replace("OneTwo", 1, 3); // One1
+substr_replace("OneTwo", 2, 1, 4); // O2o
+
+echo strstr("Elzero Web", "W") . "<br>"; // Web
+echo strstr("Elzero Web", "z") . "<br>"; // zero Web
+echo strstr("Elzero Web", "W", True) . "<br>"; // Elzero
