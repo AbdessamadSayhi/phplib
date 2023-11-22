@@ -24,15 +24,15 @@ function calculate(...$nums)
 
     // Nice Way
     echo "Number Of Arguments: " . count($nums);
-    echo "</br>";
+    echo "<br />";
     echo "Argument Index Number 3 Is " . $nums[3];
-    echo "</br>";
+    echo "<br />";
     echo "\$nums type is an " . gettype($nums); // $nums is an array
-    echo "</br>";
+    echo "<br />";
     echo "<pre>";
     print_r($nums);
     echo "</pre>";
-    echo "</br>";
+    echo "<br />";
     $result = 0;
     foreach ($nums as $num) :
         $result += $num;

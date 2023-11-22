@@ -1,13 +1,13 @@
 <?php
 
 echo "Hello world";
-echo "<br>";
+echo "<br />";
 var_dump((bool) []);
-echo "<br>";
+echo "<br />";
 echo gettype([]);
-echo "<br>";
+echo "<br />";
 echo gettype(array());
-echo "<br>";
+echo "<br />";
 
 include('hello.php'); // if hello.php dosn't exsist will show a warnning but wil continue executing the code.
 include_once('hello.php'); // Same as include() bit will make sure that the include will be executed just 1 time
@@ -82,5 +82,20 @@ foreach (["EG", "SA", "QA", "SY", "USA", "GER"] as $country) {
     if ($country == "USA") {
         continue; //will ignore this itteration but will continue the loop
     }
-    echo $country . "<br>";
+    echo $country . "<br />";
 }
+
+$numbers = [10, 2, 34, 24, 12, 1, 43, 23];
+echo "the sum of numbers is " . array_sum($numbers); //array_sum() return the sum of all numbers withing the array.
+
+// ------------- array_map() ----------------------
+/* The array_map() function in PHP is used to apply a callback function to each element of an array 
+or multiple arrays. The callback function is a function that takes one or more argument
+s and returns a single value. The array_map() function returns a new array containing
+ the results of applying the callback function to each element of the input arrays. */
+$numbers = array(1, 2, 3, 4, 5);
+$doubledNumbers = array_map(function ($x) { // using anonymous function
+    return $x * 2;
+}, $numbers);
+
+print_r($doubledNumbers); // will print each element of array $numbers multiplyed by 2.
