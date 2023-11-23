@@ -10,6 +10,9 @@ $alphabets = ['a', 'b', 'c']; // declare and assing value to array
 count([1, 2, 3, 4, 5]); // get length of array
 array_push($alphabets, "d", "e", "f"); // pushing to the end of array
 $alphabets[] = 'z'; // push to the ends of the array the letter 'z'
+array_keys($$countries); // return all keys.
+array_values($$countries); // return all values.
+array_flip($countries); // Exchange Keys With Its Values.
 
 //--------------------------------------------------------------------------------
 
@@ -66,12 +69,6 @@ foreach (["EG", "SA", "QA", "SY", "USA", "GER"] as $country) {
     //echo $country . "<br />";
 }
 
-//-----------------------endforeach-------------------------------------------------
-
-$numbers = [10, 2, 34, 24, 12, 1, 43, 23];
-array_sum($numbers); //array_sum() return the sum of all values withing the array.
-
-//--------------------------------------------------------------------------------
 $associativeArray = [
     'key1' => 'value1',
     'key2' => null,
@@ -86,4 +83,13 @@ foreach ($associativeArray as $key => $value) {
         $numberOfNonNullElements++;
     }
 }
+
+//-----------------------endforeach-------------------------------------------------
+
+$numbers = [10, 2, 34, 24, 12, 1, 43, 23];
+array_sum($numbers); //array_sum() return the sum of all values in the array.
+array_product($numbers); //product() return the result of division of all values in the array.
+in_array(1, $numbers); // check if value exist in the array. *** IMPORTANT ***
+//--------------------------------------------------------------------------------
+
 //--------------------------------------------------------------------------------
