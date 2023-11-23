@@ -12,7 +12,7 @@ function my_array_count_values($counting)
     foreach ($counting as $value) {
         if (my_array_key_exsists($newCounting, $value)) {
             $newCounting[$value]++;
-        } else if (in_array($value, $newCounting) === false) {
+        } else {
             $newCounting[$value] = 1;
         }
     }
