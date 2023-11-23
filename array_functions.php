@@ -1,5 +1,4 @@
 <?php
-
 /*
     Array Functions
 
@@ -43,10 +42,4 @@ $values = ["Ahmed", "Osama", "Kamal"];
 
 echo '<pre>';
 print_r(array_combine($keys, $values)); // will combine $keys as key and $values as values in 1 array (must be the same length).
-echo '</pre>';
-
-$counting = ["B", "A", "A", "B", "B", "B", "C"];
-
-echo '<pre>';
-print_r(array_count_values($counting));
 echo '</pre>';
