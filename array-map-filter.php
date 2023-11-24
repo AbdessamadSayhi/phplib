@@ -46,3 +46,24 @@ function check_nums($n1, $n2)
 echo '<pre>';
 print_r(array_filter($nums, "check_nums", ARRAY_FILTER_USE_BOTH));
 echo '</pre>';
+
+
+/* $arr = explode(" ", $str);
+$newStr = "";
+foreach ($arr as $word) {
+    if (strlen($word) >= 5) {
+        $temp = strrev($word);
+        $newStr .= $temp . " ";
+        continue;
+    }
+    $newStr .= $word . " ";
+}
+$newStr = substr($newStr, 0, -1);
+
+return $newStr; */
+
+
+
+/* $check = array_filter(fn($char){
+    if()
+  },$alphabets) */

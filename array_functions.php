@@ -10,8 +10,8 @@ $alphabets = ['a', 'b', 'c']; // declare and assing value to array
 count([1, 2, 3, 4, 5]); // get length of array
 array_push($alphabets, "d", "e", "f"); // pushing to the end of array
 $alphabets[] = 'z'; // push to the ends of the array the letter 'z'
-array_keys($$countries); // return all keys.
-array_values($$countries); // return all values.
+array_keys($countries); // return all keys.
+array_values($countries); // return all values.
 array_flip($countries); // Exchange Keys With Its Values.
 
 //--------------------------------------------------------------------------------
@@ -93,3 +93,24 @@ in_array(1, $numbers); // check if value exist in the array. *** IMPORTANT ***
 //--------------------------------------------------------------------------------
 
 //--------------------------------------------------------------------------------
+//  array_search($maxValue, $count_word);
+//  $count_word[$words] = $count_letter;
+//  $scoreList = array_combine($keys, $values);
+/* function high($x)
+{
+    $x = explode(" ", $x);
+    $keys = range('a', 'z');
+    $values = range(1, 26);
+    $scoreList = array_combine($keys, $values);
+    $count_letter = 0;
+    $count_word = [];
+    foreach ($x as $words) {
+        for ($i = 0; $i < strlen($words); $i++) {
+            $count_letter += $scoreList[$words[$i]];
+        }
+        $count_word[$words] = $count_letter;
+        $count_letter = 0;
+    }
+    $maxValue = max($count_word);
+    return array_search($maxValue, $count_word);
+} */
