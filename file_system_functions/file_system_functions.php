@@ -84,7 +84,7 @@ echo "<br>************<br>";
 echo basename(__FILE__) . "<br>";
 echo basename(__FILE__, ".php") . "<br>";
 
-echo dirname(__FILE__, 3) . "<br>";
+echo dirname(__FILE__) . "<br>";
 
 echo realpath(__FILE__) . "<br>";
 
