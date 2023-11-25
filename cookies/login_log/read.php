@@ -1,9 +1,8 @@
 <?php
+echo $_SERVER['REQUEST_METHOD'];
 // Handling the form for reading text from a file
-if (isset($_FILES['fileInput']) && isset($_POST['formType']) && $_POST['formType'] == "readText") {
+if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_FILES['fileInput'])) {
 
-  // Process the form for reading text
-  // Check if a file was uploaded
   if ($_FILES['fileInput']['error'] == 0) {
 
     // Get the temporary file name
