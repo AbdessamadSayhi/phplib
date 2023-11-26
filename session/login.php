@@ -1,46 +1,61 @@
 <?php
-/* if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_SESSION) && isset($_POST['unsetForm'])) {
-    // Start the session
-    //session_start();
-    // Unset all session variables
-    session_unset();
-    // Destroy the session
-    session_destroy();
-    // Regenerate the session ID
-    //session_regenerate_id(true);
-    // Write and close the session to ensure changes are saved
-    session_write_close();
-    //header("Location: login.php");
-} */
-if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['setForm'])) {
-
-    $id = session_id();
+if ($_SERVER['REQUEST_METHOD'] == "GET") {
     session_start();
+    if (isset($_SESSION["username"])) {
+        header("Location: home.php");
+        exit;
+    }
+}
+if (isset($_SESSION) && isset($_POST['unsetForm'])) {
 
+    session_unset();
+    session_destroy();
+}
+if (!isset($_SESSION) && $_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['setForm'])) {
+
+    session_start();
+    $_SESSION["username"] = $_POST["username"];
+    $_SESSION["password"] = $_POST["password"];
+    $_SESSION["user_id"] = session_id();
     setcookie("username", $_POST["username"], strtotime("+ 1 month"));
     setcookie("password", $_POST["password"], strtotime("+ 1 month"));
-
-    //$loc = $_SERVER["REQUEST_URI"];
-    header("Location: login.php");
-    //exit();
 }
-if ($_SERVER['REQUEST_METHOD'] == "GET" && isset($_POST['setForm']) && isset($_POST["username"])) {
+if (
+    $_SERVER['REQUEST_METHOD'] == "POST"
+    && isset($_POST["username"])
+    && isset($_POST["password"])
+    && isset($_SESSION)
+    && isset($_POST['setForm'])
+    && isset($_POST["log"])
+) {
 
     $handle = fopen("log.txt", "a+");
 
-    fwrite($handle, "--- " . $_COOKIE["username"] . " logged in at " . date("d/m/Y h:i:s A") . " ---\r\n");
-    fwrite($handle, "username = " . $_COOKIE["username"] . "\r\n");
-    fwrite($handle, "password = " . $_COOKIE["password"] . "\r\n");
+    fwrite($handle, "--- " . $_POST["username"] . " logged in at " . date("d/m/Y h:i:s A") . " ---\r\n");
+    fwrite($handle, "username = " . $_POST["username"] . "\r\n");
+    fwrite($handle, "password = " . $_POST["password"] . "\r\n");
     fwrite($handle, "session_id = " . session_id() . "\r\n");
     fwrite($handle, "------\r\n");
 
     fclose($handle);
-    header("Location: home.php");
-    //exit();
 }
-echo $_SERVER["REQUEST_METHOD"];
+if (isset($_SESSION) && isset($_SESSION["username"])) {
+    header("Location: home.php");
+    exit;
+}
+/* echo $_SERVER["REQUEST_METHOD"] . " REQUEST";
 echo "<br>";
-echo isset($_SESSION) ? "SESSION IS SET" : "SESSION IS NOT SET";
+
+if (isset($_SESSION["user_id"])) :
+    echo "user_id : " . $_SESSION["user_id"];
+endif;
+
+echo "<br>";
+echo "username : " . @$_COOKIE["username"];
+echo "</br>";
+echo "password : " . @$_COOKIE["password"];
+echo "</br>"; */
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -66,6 +81,8 @@ echo isset($_SESSION) ? "SESSION IS SET" : "SESSION IS NOT SET";
 
         <input type="submit" value="login">
     </form>
+
+
     <form method="post">
         <input type="hidden" name="unsetForm" value="unsetForm">
 
