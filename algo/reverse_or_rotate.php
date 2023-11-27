@@ -39,15 +39,24 @@ function reverse($s, $sz)
     $chunk = chunk_split($s, $sz);
     echo "*" . $chunk . "*</br>";
     $chunkarr = str_split($chunk);
-    echo "<pre>";
-    print_r($chunkarr);
-    echo "</pre>";
+    return $chunkarr;
 }
 function revRot($s)
 {
     $ss = str_split($s);
-    echo var_dump(isExists($s, counting($s)));
-    reverse($s, 6);
+    echo "<br>" . counting($s) . "<br>";
+    echo var_dump(isExists($s, counting($s))) . "<br>";
+    $s = reverse($s, 6);
+
+    echo "<pre>";
+    print_r($s);
+    echo "</pre>";
+
+    $s[6] = $s[0];
+
+    echo "<pre>";
+    print_r($s);
+    echo "</pre>";
 }
 
 

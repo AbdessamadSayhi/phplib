@@ -1,0 +1,2 @@
+<?php
+//substr_count()
