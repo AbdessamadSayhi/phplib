@@ -22,7 +22,7 @@ $handle = fopen("elzero.txt", "r");
 
 // echo ftell($handle) . "<br>"; // 0
 
-// echo fgets($handle) . "<br>";
+ echo fgets($handle) . "<br>";
 
 // echo fgets($handle) . "<br>";
 

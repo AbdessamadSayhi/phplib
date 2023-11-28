@@ -19,4 +19,4 @@ foreach ($person as $key => $value) {
     echo "</br>" . $key . ": ";
     echo "</br>" . $value . "</br>";
 }
-// or implode function
+// or implode function and explode
