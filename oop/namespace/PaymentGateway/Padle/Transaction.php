@@ -9,6 +9,6 @@ class Transaction
 {
     public function __construct()
     {
-        echo 'Within namespace/PaymentGateway/Stripe/Transaction.php';
+        echo 'Within namespace/PaymentGateway/Padle/Transaction.php';
     }
 }
