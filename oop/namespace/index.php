@@ -2,9 +2,22 @@
 
 declare(strict_types=1);
 
-use PaymentGateway\Padle\Transaction;
+/* 
+Here we are using 2 classes with the same name within 1 file
+and this wll cause an error 
+because PHP cannot use PaymentGateway\Stripe\Transaction as Transaction
+because it's already in use.
 
-//require_once('PaymentGateway/Stripe/Transaction.php');
+use PaymentGateway\Padle\Transaction;
+use PaymentGateway\Stripe\Transaction;
+
+*/
+
+use PaymentGateway\Padle\Transaction;
+// here we use aliasing to get rid of the conflit.
+use PaymentGateway\Stripe\Transaction as StripeTransaction;
+
+require_once('PaymentGateway/Stripe/Transaction.php');
 require_once('PaymentGateway/Padle/Transaction.php');
 require_once('PaymentGateway/Padle/cutomerProfile.php');
 require_once('Notification/Email.php');
@@ -22,4 +35,9 @@ this will cause an error (Fatal error: Cannot declare class Transaction, because
 echo '</br>';
 var_dump(new \PaymentGateway\Stripe\Transaction()); */
 
-var_dump(new Transaction());
+
+$padleTransaction = new Transaction();
+// using the alias to initilize the stripe transaction.
+$stripeTransaction = new StripeTransaction();
+
+var_dump($padleTransaction, $stripeTransaction);

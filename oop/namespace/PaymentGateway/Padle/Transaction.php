@@ -36,5 +36,11 @@ class Transaction
         instead of the global namespace function. 
         */
         var_dump(explode(',', 'hello,world'));
+        echo '</br>';
+    }
+
+    public function __destruct()
+    {
+        echo '</br>destruct ..</br>';
     }
 }
