@@ -1,14 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home page</title>
-</head>
+declare(strict_types=1);
+require_once('namespace/PaymentGateway/Stripe/Transaction.php');
 
-<body>
-
-</body>
-
-</html>
+/*
+This class does not have any namespace defiened to it
+so PHP will try to locate this file in the global space 
+and it find it there and therefor everythink works.
+*/
+var_dump(new Transaction());
