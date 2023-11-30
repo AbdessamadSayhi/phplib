@@ -4,8 +4,10 @@ declare(strict_types=1);
 
 use PaymentGateway\Padle\Transaction;
 
-require_once('PaymentGateway/Stripe/Transaction.php');
+//require_once('PaymentGateway/Stripe/Transaction.php');
 require_once('PaymentGateway/Padle/Transaction.php');
+require_once('PaymentGateway/Padle/cutomerProfile.php');
+require_once('Notification/Email.php');
 
 /*
 When you require 2 classes with the same name
@@ -16,6 +18,8 @@ this will cause an error (Fatal error: Cannot declare class Transaction, because
 //var_dump(new Transaction());
 
 // instead we will have to use the namespace when declaring the class.
-var_dump(new Transaction());
+/* var_dump(new Transaction());
 echo '</br>';
-var_dump(new \PaymentGateway\Stripe\Transaction());
+var_dump(new \PaymentGateway\Stripe\Transaction()); */
+
+var_dump(new Transaction());
