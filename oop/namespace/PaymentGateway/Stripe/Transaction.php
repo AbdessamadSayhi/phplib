@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-/* when define a function, constant or a class without a namespace definition, 
-by default they will be put in a global space 
-(like this example the Transaction class is put in a global space)*/
-
 namespace PaymentGateway\Stripe;
+
+use PaymentGateway\Padle\cutomerProfile;
 
 class Transaction
 {
     public function __construct()
     {
-        echo 'Within namespace/PaymentGateway/Stripe/Transaction.php';
+    }
+    public function __destruct()
+    {
     }
 }
